@@ -42,7 +42,9 @@ plugins.push(
       removeComments: true,
       useShortDoctype: true,
     },
-  })
+  }),
+  new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+  //new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en|ko|ja|zh-cn)$/)
 );
 
 if (IS_DEVELOPMENT) {
